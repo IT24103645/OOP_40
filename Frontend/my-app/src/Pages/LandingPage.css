@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+:root {
+  /* --blue-500: rgb(11, 19, 43);
+  --blue-300: rgb(28, 37, 65);
+  --blue-100: rgb(58, 80, 107);
+  --cyan-300: rgb(91, 192, 190);
+  --cyan-100: rgb(111, 255, 233); */
+
+  --blue-500: rgb(0, 0, 0);
+  --blue-300: rgb(28, 37, 65);
+  --blue-100: rgb(58, 80, 107);
+  --cyan-300: rgb(91, 192, 190);
+  --cyan-100: rgb(111, 255, 233);
+  --grey-700: rgb(26, 26, 26);
+  --brown-700: rgb(42, 38, 32);
+
+  --xs: 0.2rem;
+  --small: 0.5rem;
+  --medium: 1rem;
+  --large: 1.5rem;
+  --xl: 2rem;
+  --xxl: 2.5rem;
+  --xxxl: 3rem;
+  --xxxxl: 4rem;
+
+  --1px: calc(1 / 16rem);
+
+  --primary-font-family: "Fira Sans", sans-serif;
+  --logo-font-family: "Bebas Neue", sans-serif;
+}
+
+/* reset styles */
+body {
+  margin: 0;
+  background-color: var(--blue-500);
+  position: relative;
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+#carousel {
+  display: flex;
+  align-items: start;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+/* carousel > carousel-img */
+#carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* filter: brightness(100%); */
+}
+
+/* carousel > movie-details */
+#movie-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  color: white;
+
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.181) 50%, rgb(11, 11, 11) 100%);
+
+  /* z index to remove conflict with below carousel image and movie details divs */
+  z-index: 4;
+}
+
+#title-description {
+  /* paddings and spacing for title and paragraph stuff inside */
+  /* min-height: 30%; */
+  padding: 0 var(--xxl) var(--xxl) var(--xxl);
+
+  text-shadow: 1px 1px 10px rgb(0, 0, 0);
+}
+
+#movie-title {
+  font-family: var(--primary-font-family);
+  font-weight: 500;
+  font-size: var(--xl);
+  margin-bottom: var(--large);
+}
+
+#movie-description {
+  font-family: var(--primary-font-family);
+  font-weight: 200;
+  font-size: var(--medium);
+}
+
+/* we add and remove this class with javascript to trigger animation */
+.slideInAnimation {
+  animation: slideIn 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/*    =================       */
+/*     END OF CAROUSEL        */
+/*    =================       */
+
+#new-section {
+  font-family: var(--primary-font-family);
+  padding: var(--xxxxl) 0;
+  margin: 0 var(--xxl);
+}
+
+#new-header {
+  color: white;
+  padding: 0 0 var(--xxxl) 0;
+}
+
+#card-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: var(--xl);
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+#card-container::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar */
+}
+
+.card {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--large);
+}
+
+.card-poster {
+  /* width: 100%; */
+}
+
+.card-title {
+  color: white;
+  font-size: var(--medium);
+  font-weight: 500;
+}
+
+.card-details {
+  color: rgba(255, 255, 255, 0.275);
+  display: flex;
+  column-gap: var(--large);
+}
+
+.card-btn-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--small);
+}
+
+.card-buy-ticket {
+  border-color: var(--cyan-300);
+  background-color: var(--cyan-300);
+  color: black;
+
+  border-radius: var(--small);
+  padding: var(--small);
+
+  text-align: center;
+}
+.card-watch-trailer {
+  border: 1px solid rgba(255, 255, 255, 0.195);
+  color: white;
+
+  border-radius: var(--small);
+  padding: var(--small);
+
+  font-weight: 100;
+  text-align: center;
+}
+
+/*    =================       */
+/*    END OF NOW SHOWING      */
+/*    =================       */
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

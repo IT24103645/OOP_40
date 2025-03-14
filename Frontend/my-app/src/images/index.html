@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./index.css" rel="stylesheet" />
+    <title>Cinelux</title>
+  </head>
+  <body>
+    <!-- absolute positioned navbar -->
+    <div id="navbar">
+      <div id="menu-container">
+        <p>Cinelux</p>
+        <img src="./menu_icon.svg" id="burger-icon" />
+      </div>
+      <div id="nav-items">
+        <p class="nav-item" id="active-page">Home</p>
+        <p class="nav-item" id="buy-ticket-btn">Buy ticket</p>
+        <p class="nav-item">Sign up</p>
+        <p class="nav-item">Log in</p>
+      </div>
+    </div>
+
+    <!-- carousel/hero section MOBILE -->
+    <div id="carousel">
+      <img id="carousel-image" src="" />
+      <div id="movie-details">
+        <div id="title-description">
+          <h2 id="movie-title">Jumanji: Next Level</h2>
+          <p id="movie-description">When Spencer disappears, his friends enter the game again, only to find that it has evolved with new landscapes and even more perilous challenges</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- new arrivals section -->
+    <div id="new-section">
+      <h1 id="new-header">Now Showing</h1>
+      <div id="card-container">
+        <div class="card">
+          <img class="card-poster" src="./Movieposters/karate_kid.jpg" />
+          <p class="card-title">Karate kid</p>
+          <div class="card-details">
+            <p class="card-year">2025</p>
+            <p class="card-rating">PG 13</p>
+            <p class="card-length">1h 45m</p>
+          </div>
+          <div class="card-btn-container">
+            <p class="card-buy-ticket">Buy tickets</p>
+            <p class="card-watch-trailer">Watch trailer</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-poster" src="./Movieposters/princess_and_the_frog.jpg" />
+          <p class="card-title">Princess and the Frog</p>
+          <div class="card-details">
+            <p class="card-year">2025</p>
+            <p class="card-rating">PG 13</p>
+            <p class="card-length">1h 32m</p>
+          </div>
+          <div class="card-btn-container">
+            <p class="card-buy-ticket">Buy tickets</p>
+            <p class="card-watch-trailer">Watch trailer</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-poster" src="./Movieposters/jumanji_3.jpeg" />
+          <p class="card-title">Jumanji 3</p>
+          <div class="card-details">
+            <p class="card-year">2025</p>
+            <p class="card-rating">NR</p>
+            <p class="card-length">2h 11m</p>
+          </div>
+          <div class="card-btn-container">
+            <p class="card-buy-ticket">Buy tickets</p>
+            <p class="card-watch-trailer">Watch trailer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div id="footer">
+      <p id="footer-logo">CINELUX</p>
+      <p>privacy policy</p>
+      <p>terms and conditions</p>
+      <p>COVID-19 policies</p>
+      <div id="footer-socials-container">
+        <img src="./instagram.svg" class="footer-socials" />
+        <img src="./facebook-icon.svg" class="footer-socials" />
+      </div>
+    </div>
+
+    <!-- privacy policy section -->
+    <div id="privacy-section">
+      <p>This website is made purely for educational purposes. All content belongs to their respective owners</p>
+    </div>
+
+    <script src="./Script.js"></script>
+  </body>
+</html>

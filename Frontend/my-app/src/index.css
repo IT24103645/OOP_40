@@ -1,68 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* --blue-500: rgb(11, 19, 43);
+  --blue-300: rgb(28, 37, 65);
+  --blue-100: rgb(58, 80, 107);
+  --cyan-300: rgb(91, 192, 190);
+  --cyan-100: rgb(111, 255, 233); */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --blue-500: rgb(0, 0, 0);
+  --blue-300: rgb(28, 37, 65);
+  --blue-100: rgb(58, 80, 107);
+  --cyan-300: rgb(91, 192, 190);
+  --cyan-100: rgb(111, 255, 233);
+  --grey-700: rgb(26, 26, 26);
+  --brown-700: rgb(42, 38, 32);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --xs: 0.2rem;
+  --small: 0.5rem;
+  --medium: 1rem;
+  --large: 1.5rem;
+  --xl: 2rem;
+  --xxl: 2.5rem;
+  --xxxl: 3rem;
+  --xxxxl: 4rem;
+
+  --1px: calc(1 / 16rem);
+
+  --primary-font-family: "Fira Sans", sans-serif;
+  --logo-font-family: "Bebas Neue", sans-serif;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* reset styles */
 body {
   margin: 0;
+  background-color: var(--blue-500);
+  position: relative;
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+/* custom css */
+#navbar {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  right: 0;
+
+  background-color: rgba(0, 0, 0, 0.76);
+  color: white;
+
+  /* z index to remove conflict with below carousel image and movie details divs */
+  z-index: 5;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#menu-container {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--xs) var(--medium);
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+
+  /* styles for logo text */
+  font-family: var(--logo-font-family);
+  font-weight: 400;
+  font-size: var(--xxl);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+#burger-icon {
+  height: var(--xxxl);
+  margin: auto 0;
+}
+
+#nav-items {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: var(--medium);
+  height: 100vh;
+
+  font-family: var(--primary-font-family);
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+  /* slideDown animation everytime user opens this menu */
+  animation: slideDown 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.nav-item {
+  width: 80%;
+  border-radius: var(--small);
+  padding: var(--medium);
+
+  border: 1px solid rgba(255, 255, 255, 0.195);
+
+  text-align: center;
+}
+
+#buy-ticket-btn {
+  border-color: var(--cyan-300);
+  background-color: var(--cyan-300);
+  color: black;
+}
+
+#active-page {
+  border-color: var(--cyan-300);
+  color: var(--cyan-300);
+}
+
+#footer {
+  background-color: var(--grey-700);
+  color: white;
+  font-family: var(--primary-font-family);
+  font-weight: 100;
+
+  /* seperates footer from privacy */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: var(--medium);
+
+  padding: var(--xxxl);
+}
+
+#footer-logo {
+  font-family: var(--logo-font-family);
+  font-size: var(--xxxl);
+}
+
+#footer-socials-container {
+  display: flex;
+  justify-content: space-between;
+  column-gap: var(--xl);
+
+  margin: var(--xxl) 0 0 0;
+}
+
+/* adjusting icon size --- icons from svgrepo -- edited in svgrepo */
+.footer-socials {
+  width: var(--xl);
+}
+
+#privacy-section {
+  background-color: var(--brown-700);
+  font-family: var(--primary-font-family);
+  font-size: var(--medium);
+  font-weight: 100;
+  color: white;
+
+  padding: var(--xxxl);
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1024px) {
+}
+
+@media (min-width: 1441px) {
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
