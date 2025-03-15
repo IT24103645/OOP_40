@@ -1,4 +1,4 @@
-import "./LandingPage.css";
+import "./landingPage.css";
 
 import Card from "../Components/LandingPage/Card.jsx";
 

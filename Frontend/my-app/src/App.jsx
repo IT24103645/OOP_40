@@ -1,19 +1,25 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Footer from "./Components/Footer.jsx";
 import Navbar from "./Components/Navbar.jsx";
+import BookTicket from "./Pages/BookTicket.jsx";
 import LandingPage from "./Pages/LandingPage.jsx";
 
 function App() {
   return (
     <>
-      {/* absolute positioned navbar */}
-      <Navbar />
+      <Router>
+        {/* absolute positioned navbar */}
+        <Navbar />
 
-      <LandingPage />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/buy-ticket" element={<BookTicket />} />
+        </Routes>
 
-      {/* footer and privacy section */}
-      <Footer />
+        {/* footer and privacy section */}
+        <Footer />
+      </Router>
     </>
   );
 }

@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+:root {
+  /* --blue-500: rgb(11, 19, 43);
+  --blue-300: rgb(28, 37, 65);
+  --blue-100: rgb(58, 80, 107);
+  --cyan-300: rgb(91, 192, 190);
+  --cyan-100: rgb(111, 255, 233); */
+
+  --blue-500: rgb(0, 0, 0);
+  --blue-300: rgb(28, 37, 65);
+  --blue-100: rgb(58, 80, 107);
+  --cyan-300: rgb(91, 192, 190);
+  --cyan-100: rgb(111, 255, 233);
+  --grey-700: rgb(26, 26, 26);
+  --grey-100: rgb(169, 169, 169);
+  --brown-700: rgb(42, 38, 32);
+
+  --xs: 0.2rem;
+  --small: 0.5rem;
+  --medium: 1rem;
+  --large: 1.5rem;
+  --xl: 2rem;
+  --xxl: 2.5rem;
+  --xxxl: 3rem;
+  --xxxxl: 4rem;
+
+  --1px: calc(1 / 16rem);
+
+  --primary-font-family: "Fira Sans", sans-serif;
+  --logo-font-family: "Bebas Neue", sans-serif;
+}
+
+/* reset styles */
+body {
+  margin: 0;
+  background-color: var(--blue-500);
+  position: relative;
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+#book-ticket-container {
+  padding: calc(var(--xxxl) * 2) var(--xxl) var(--xxl) var(--xxl);
+
+  font-family: var(--primary-font-family);
+}
+
+#book-ticket-header {
+  color: white;
+  font-size: var(--xl);
+
+  padding: var(--xxl) 0;
+}
+
+/* .options-section {
+} */
+
+.options-title {
+  color: white;
+  font-weight: 400;
+}
+
+.options-container {
+  padding: var(--medium) 0 var(--xxl) 0;
+  color: var(--grey-100);
+
+  /* makes options wrap to next line if there's a lot of them */
+  display: flex;
+  flex-direction: row;
+  gap: var(--small);
+  flex-wrap: wrap;
+}
+
+.option {
+  border: 1px solid var(--grey-100);
+  padding: var(--medium);
+  border-radius: var(--small);
+}
+
+#book-ticket-btns {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--medium);
+}
+
+#next-btn {
+  background-color: var(--cyan-100);
+  padding: var(--medium);
+  border-radius: var(--small);
+  text-align: center;
+}
+
+#cancel-btn {
+  border: 1px solid var(--grey-100);
+  padding: var(--medium);
+  border-radius: var(--small);
+  color: var(--grey-100);
+  text-align: center;
+}

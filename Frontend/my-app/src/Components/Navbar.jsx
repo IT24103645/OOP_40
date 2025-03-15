@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,14 +36,45 @@ function Navbar() {
           <img src={menuIcon} id="burger-icon" onClick={menuClick} />
         </div>
         <div id="nav-items" ref={menuRef}>
-          <p className="nav-item" id="active-page">
+          <NavLink
+            className="nav-item"
+            to="/"
+            style={({ isActive }) => ({
+              borderColor: isActive ? "rgb(91, 192, 190)" : "rgba(255, 255, 255, 0.195)",
+              color: isActive ? "rgb(91, 192, 190)" : "rgb(255,255,255)",
+            })}
+            onClick={menuClick}
+          >
             Home
-          </p>
-          <p className="nav-item" id="buy-ticket-btn">
+          </NavLink>
+
+          <NavLink className="nav-item buy-ticket-btn" to="/buy-ticket" onClick={menuClick}>
             Buy ticket
-          </p>
-          <p className="nav-item">Cinemas</p>
-          <p className="nav-item">Contact us</p>
+          </NavLink>
+
+          <NavLink
+            className="nav-item"
+            to="/login"
+            style={({ isActive }) => ({
+              borderColor: isActive ? "rgb(91, 192, 190)" : "rgba(255, 255, 255, 0.195)",
+              color: isActive ? "rgb(91, 192, 190)" : "rgb(255,255,255)",
+            })}
+            onClick={menuClick}
+          >
+            Log in
+          </NavLink>
+
+          <NavLink
+            className="nav-item"
+            to="/signup"
+            style={({ isActive }) => ({
+              borderColor: isActive ? "rgb(91, 192, 190)" : "rgba(255, 255, 255, 0.195)",
+              color: isActive ? "rgb(91, 192, 190)" : "rgb(255,255,255)",
+            })}
+            onClick={menuClick}
+          >
+            Sign up
+          </NavLink>
         </div>
       </div>
     </>

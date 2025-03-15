@@ -100,17 +100,14 @@ h3 {
   border: 1px solid rgba(255, 255, 255, 0.195);
 
   text-align: center;
+  text-decoration: none;
+  color: white;
 }
 
-#buy-ticket-btn {
+.buy-ticket-btn {
   border-color: var(--cyan-300);
   background-color: var(--cyan-300);
   color: black;
-}
-
-#active-page {
-  border-color: var(--cyan-300);
-  color: var(--cyan-300);
 }
 
 #footer {
