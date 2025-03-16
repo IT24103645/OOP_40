@@ -4,6 +4,7 @@ import Footer from "./Components/Footer.jsx";
 import Navbar from "./Components/Navbar.jsx";
 import BookTicket from "./Pages/BookTicket.jsx";
 import LandingPage from "./Pages/LandingPage.jsx";
+import Admin from "./Pages/Admin.jsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/buy-ticket" element={<BookTicket />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
 
         {/* footer and privacy section */}

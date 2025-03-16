@@ -20,11 +20,22 @@ function Navbar() {
     }
     //when the menu is closed on mobile
     else {
-      menuRef.current.style.display = "none";
-      setMenuIcon("./src/images/menu_icon.svg");
+      //trigger slideUp animation first
+      menuRef.current.classList.add("nav-items-slideUp");
 
-      //return color back to normal when we close menu
-      navbarRef.current.style.backgroundColor = "rgba(0,0,0,0.76)";
+      //wait 0.5sec then make menu disappear
+      setTimeout(() => {
+        //first make menu disappear
+        menuRef.current.style.display = "none";
+        setMenuIcon("./src/images/menu_icon.svg");
+
+        //then switch animation to slideDown for next menu opening
+        menuRef.current.classList.remove("nav-items-slideUp");
+        menuRef.current.classList.add("nav-items-slideDown");
+
+        //return color bgcolor to transparent when we close menu
+        navbarRef.current.style.backgroundColor = "rgba(0,0,0,0.76)";
+      }, 200);
     }
   }
 
@@ -35,7 +46,7 @@ function Navbar() {
           <p>Cinelux</p>
           <img src={menuIcon} id="burger-icon" onClick={menuClick} />
         </div>
-        <div id="nav-items" ref={menuRef}>
+        <div id="nav-items" className="nav-items-slideDown" ref={menuRef}>
           <NavLink
             className="nav-item"
             to="/"
@@ -54,26 +65,26 @@ function Navbar() {
 
           <NavLink
             className="nav-item"
-            to="/login"
+            to="/login-signup"
             style={({ isActive }) => ({
               borderColor: isActive ? "rgb(91, 192, 190)" : "rgba(255, 255, 255, 0.195)",
               color: isActive ? "rgb(91, 192, 190)" : "rgb(255,255,255)",
             })}
             onClick={menuClick}
           >
-            Log in
+            Log in / Sign up
           </NavLink>
 
           <NavLink
             className="nav-item"
-            to="/signup"
+            to="/admin"
             style={({ isActive }) => ({
               borderColor: isActive ? "rgb(91, 192, 190)" : "rgba(255, 255, 255, 0.195)",
               color: isActive ? "rgb(91, 192, 190)" : "rgb(255,255,255)",
             })}
             onClick={menuClick}
           >
-            Sign up
+            Admin page
           </NavLink>
         </div>
       </div>

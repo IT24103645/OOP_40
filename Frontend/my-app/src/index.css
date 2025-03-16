@@ -87,9 +87,15 @@ h3 {
 
   font-family: var(--primary-font-family);
   font-weight: 500;
+}
 
+.nav-items-slideDown {
   /* slideDown animation everytime user opens this menu */
   animation: slideDown 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nav-items-slideUp {
+  animation: slideUp 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
 }
 
 .nav-item {
@@ -176,5 +182,16 @@ h3 {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20%);
   }
 }

@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+:root {
+  /* --blue-500: rgb(11, 19, 43);
+  --blue-300: rgb(28, 37, 65);
+  --blue-100: rgb(58, 80, 107);
+  --cyan-300: rgb(91, 192, 190);
+  --cyan-100: rgb(111, 255, 233); */
+
+  --blue-500: rgb(0, 0, 0);
+  --blue-300: rgb(28, 37, 65);
+  --blue-100: rgb(58, 80, 107);
+  --cyan-300: rgb(91, 192, 190);
+  --cyan-100: rgb(111, 255, 233);
+  --grey-700: rgb(26, 26, 26);
+  --grey-100: rgb(169, 169, 169);
+  --brown-700: rgb(42, 38, 32);
+  --green-100: rgb(92, 255, 130);
+
+  --xs: 0.2rem;
+  --small: 0.5rem;
+  --medium: 1rem;
+  --large: 1.5rem;
+  --xl: 2rem;
+  --xxl: 2.5rem;
+  --xxxl: 3rem;
+  --xxxxl: 4rem;
+
+  --1px: calc(1 / 16rem);
+
+  --primary-font-family: "Fira Sans", sans-serif;
+  --logo-font-family: "Bebas Neue", sans-serif;
+}
+
+/* reset styles */
+body {
+  margin: 0;
+  background-color: var(--blue-500);
+  position: relative;
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+.user-actions-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--large);
+
+  padding: calc(var(--xxxl) * 2) var(--xxl) var(--xxxxl) var(--xxl);
+
+  color: white;
+  background-color: var(--blue-300);
+
+  font-family: var(--primary-font-family);
+}
+
+.user-profile {
+  display: flex;
+  column-gap: var(--medium);
+
+  padding: var(--medium) 0;
+}
+
+.user-icon {
+  width: var(--xxxl);
+}
+
+.user-name {
+}
+
+.user-status {
+  color: var(--green-100);
+}
+
+.admin-action {
+  display: flex;
+  align-items: center;
+  column-gap: var(--xl);
+
+  padding: var(--medium) 0 var(--medium) var(--large);
+
+  /* border: 1px solid var(--grey-100); */
+  border-radius: var(--small);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  background-color: var(--blue-100);
+}
+
+.admin-action:active {
+  background-color: red;
+}
+
+.admin-action-icons {
+  width: var(--xxl);
+}
