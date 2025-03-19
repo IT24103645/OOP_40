@@ -47,49 +47,6 @@ h3 {
   margin: 0;
 }
 
-.user-actions-container {
-  display: flex;
-  flex-direction: column;
-
-  padding: calc(var(--xxxl) * 2) 0 var(--xxxxl) 0;
-
-  color: white;
-
-  font-family: var(--primary-font-family);
-}
-
-.user-profile {
-  display: flex;
-  column-gap: var(--medium);
-
-  padding: var(--medium) var(--xxl) var(--xxxl) var(--xxl);
-}
-#regular-user-profile {
-  align-items: center;
-}
-
-.user-icon {
-  width: var(--xxxl);
-}
-
-.user-status {
-  color: var(--green-100);
-}
-
-.user-action {
-  display: flex;
-  align-items: center;
-  column-gap: var(--xl);
-
-  padding: var(--medium) 0 var(--medium) var(--xxxxl);
-
-  /* border: 1px solid var(--grey-100); */
-}
-
-.user-action:active {
-  background-color: rgb(43, 43, 43);
-}
-
-.user-action-icons {
-  width: var(--large);
+#delete-user-profile {
+  color: rgb(255, 3, 3);
 }

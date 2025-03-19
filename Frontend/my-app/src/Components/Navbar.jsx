@@ -86,6 +86,18 @@ function Navbar() {
           >
             Admin page
           </NavLink>
+
+          <NavLink
+            className="nav-item"
+            to="/user"
+            style={({ isActive }) => ({
+              borderColor: isActive ? "rgb(91, 192, 190)" : "rgba(255, 255, 255, 0.195)",
+              color: isActive ? "rgb(91, 192, 190)" : "rgb(255,255,255)",
+            })}
+            onClick={menuClick}
+          >
+            User page
+          </NavLink>
         </div>
       </div>
     </>
