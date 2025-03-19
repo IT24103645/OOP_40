@@ -1,9 +1,12 @@
 import { useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 
+import menuSVG from "../../public/images/menu_icon.svg";
+import closeSVG from "../../public/images/close.svg";
+
 function Navbar() {
   const [isVisible, setIsVisible] = useState(false);
-  const [menuIcon, setMenuIcon] = useState("./src/images/menu_icon.svg");
+  const [menuIcon, setMenuIcon] = useState(menuSVG);
   const menuRef = useRef();
   const navbarRef = useRef();
 
@@ -13,7 +16,7 @@ function Navbar() {
 
     if (isVisible) {
       menuRef.current.style.display = "flex";
-      setMenuIcon("./src/images/close.svg");
+      setMenuIcon(closeSVG);
 
       //we also darken the bgcolor
       navbarRef.current.style.backgroundColor = "rgb(0,0,0)";
@@ -27,7 +30,7 @@ function Navbar() {
       setTimeout(() => {
         //first make menu disappear
         menuRef.current.style.display = "none";
-        setMenuIcon("./src/images/menu_icon.svg");
+        setMenuIcon(menuSVG);
 
         //then switch animation to slideDown for next menu opening
         menuRef.current.classList.remove("nav-items-slideUp");

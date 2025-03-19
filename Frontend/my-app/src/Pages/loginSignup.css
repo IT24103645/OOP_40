@@ -99,12 +99,23 @@ h3 {
 #login-signup-form-submit-btn {
   text-align: center;
 
+  /* the entire form loads as a whole and the login button is placed inside together with other 2 inputs */
+  /* to seperate login btn a little we give it a top margin */
+  margin-top: var(--large);
+
   padding: var(--medium) var(--xxl);
   border-radius: var(--small);
 
   flex: 1;
 
-  background-color: red;
+  background-color: var(--grey-700);
+  color: white;
+}
+
+#login-signup-form-submit-btn:active {
+  background-color: rgb(52, 52, 52);
+
+  transition: 0.2s;
 }
 
 #not-a-member {
@@ -113,6 +124,12 @@ h3 {
   column-gap: var(--medium);
 
   color: white;
+
+  padding: var(--medium) 0 var(--large) 0;
+}
+
+.login-signup-links {
+  color: rgb(105, 120, 178);
 }
 
 /* ================ */

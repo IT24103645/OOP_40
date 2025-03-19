@@ -1,3 +1,6 @@
+import facebookSVG from "../../public/images/facebook-icon.svg";
+import instagramSVG from "../../public/images/instagram.svg";
+
 function Footer() {
   return (
     <>
@@ -8,8 +11,8 @@ function Footer() {
         <p>terms and conditions</p>
         <p>COVID-19 policies</p>
         <div id="footer-socials-container">
-          <img src="./src/images/instagram.svg" className="footer-socials" />
-          <img src="./src/images/facebook-icon.svg" className="footer-socials" />
+          <img src={facebookSVG} className="footer-socials" />
+          <img src={instagramSVG} className="footer-socials" />
         </div>
       </div>
 

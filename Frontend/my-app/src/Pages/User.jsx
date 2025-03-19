@@ -1,5 +1,11 @@
 import "./user.css";
 
+import userSVG from "../../public/images/user.svg";
+import edit_profileSVG from "../../public/images/edit_profile.svg";
+import historySVG from "../../public/images/history.svg";
+import ticketSVG from "../../public/images/ticket.svg";
+import deleteSVG from "../../public/images/delete.svg";
+
 function User() {
   let userName = "Ravindu";
 
@@ -7,23 +13,23 @@ function User() {
     <>
       <div className="user-actions-container">
         <div className="user-profile" id="regular-user-profile">
-          <img className="user-icon" src="./src/images/user.svg"></img>
+          <img className="user-icon" src={userSVG}></img>
           <h2>Welcome {userName} !</h2>
         </div>
         <div className="user-action">
-          <img src="../src/images/sales.svg" className="admin-action-icons"></img>
+          <img src={edit_profileSVG} className="admin-action-icons"></img>
           <p>Edit profile</p>
         </div>
         <div className="user-action">
-          <img src="../src/images/add_movie.svg" className="admin-action-icons"></img>
+          <img src={historySVG} className="admin-action-icons"></img>
           <p>Movie history</p>
         </div>
         <div className="user-action">
-          <img src="../src/images/edit_movie.svg" className="admin-action-icons"></img>
-          <p>Manage Bookings</p>
+          <img src={ticketSVG} className="admin-action-icons"></img>
+          <p>Manage Tickets</p>
         </div>
         <div className="user-action" id="delete-user-profile">
-          <img src="../src/images/delete.svg" className="admin-action-icons"></img>
+          <img src={deleteSVG} className="admin-action-icons"></img>
           <p>Delete profile</p>
         </div>
       </div>

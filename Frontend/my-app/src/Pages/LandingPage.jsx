@@ -4,13 +4,19 @@ import Card from "../Components/LandingPage/Card.jsx";
 
 import { useState, useRef, useEffect } from "react";
 
+//replace all these img imports with get requests to the hosted images
+import superman from "../../public/images/Movieposters/superman.jpg";
+import karate_kid from "../../public/images/Movieposters/karate_kid.jpg";
+import it_comes_at_night from "../../public/images/Movieposters/it_comes_at_night.jpg";
+import jumanji_3 from "../../public/images/Movieposters/jumanji_3.jpeg";
+
 function LandingPage() {
   const [movieId, setMovieId] = useState(0);
   const [carouselImg, setCarouselImg] = useState("slideInAnimation");
 
   let movieObjects = [
     {
-      posterPath: "../src/images/Movieposters/superman.jpg",
+      posterPath: superman,
       movieTitle: "Superman (2025)",
       movieDescription: "As Metropolis faces destruction, Clark Kent must confront his inner demons and team up with old allies to stop a villain unlike any he has faced before",
       year: "2025",
@@ -18,7 +24,7 @@ function LandingPage() {
       rating: "PG-13",
     },
     {
-      posterPath: "../src/images/Movieposters/karate_kid.jpg",
+      posterPath: karate_kid,
       movieTitle: "Karate Kid: Legends",
       movieDescription: "To defend the honor of the dojo, he must face a legendary opponent in a high-stakes battle that will test his courage and skills like never before",
       year: "2025",
@@ -26,7 +32,7 @@ function LandingPage() {
       rating: "PG-13",
     },
     {
-      posterPath: "../src/images/Movieposters/it_comes_at_night.jpg",
+      posterPath: it_comes_at_night,
       movieTitle: "It Comes At Night",
       movieDescription: "a family seeks refuge behind locked doors. But when another group arrives, fear and mistrust tear them apart, and soon, the greatest danger comes from within",
       year: "2022",
@@ -34,7 +40,7 @@ function LandingPage() {
       rating: "PG-18",
     },
     {
-      posterPath: "../src/images/Movieposters/jumanji_3.jpeg",
+      posterPath: jumanji_3,
       movieTitle: "Jumanji 3",
       movieDescription: "When Spencer disappears, his friends enter the game again, only to find that it has evolved with new landscapes and even more perilous challenges",
       year: "2024",
