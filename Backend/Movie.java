@@ -1,83 +1,65 @@
-package com.example.cinelux;
+package com.example.demo.models;
 
-class Movie {
-    //replace arrays with lists?
-    private static final int MAX_REVIEWS = 10;
-    private static final int MAX_SHOWTIMES = 10;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Movie implements Serializable {
+    //for jackson
+    private static final long serialVersionUID = 1L;
+
+    //class eke attributes tikaz
     private int movieId;
-    private String title;
+    private String movieTitle;
+    private String releaseDate; // changed from LocalDate to String
     private String description;
     private MovieCategory category;
-    private Review[] reviewArray = new Review[MAX_REVIEWS];
-    private ShowTime[] showTimeArray = new ShowTime[MAX_SHOWTIMES];
-    private int reviewCount = 0;
-    private int showTimeCount = 0;
+    private List<Review> reviewList = new ArrayList<>();
+    private List<ShowTime> showTimeList = new ArrayList<>();
 
-    public Movie(int movieId, String title, String description, MovieCategory category) {
-        if (title == null || title.trim().isEmpty()) throw new IllegalArgumentException("Title cannot be empty.");
-        if (description == null || description.trim().isEmpty())
-            throw new IllegalArgumentException("Description cannot be empty.");
+    // default constructor
+    public Movie() {
+    }
+
+    //parametrized constructor
+    public Movie(int movieId, String movieTitle, String description, String category, String releaseDate) {
+        if (movieTitle == null || movieTitle.trim().isEmpty()) {
+            throw new IllegalArgumentException("Movie title cannot be null or empty");
+        }
+        if (description == null || description.trim().isEmpty()) {
+            throw new IllegalArgumentException("Description cannot be null or empty");
+        }
+        if (category == null || category.trim().isEmpty()) {
+            throw new IllegalArgumentException("Category cannot be null or empty");
+        }
+
+        try {
+            this.category = MovieCategory.valueOf(category.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Invalid category: " + category);
+        }
+
+        if (releaseDate == null || releaseDate.trim().isEmpty()) {
+            throw new IllegalArgumentException("Release date cannot be null or empty");
+        }
+
         this.movieId = movieId;
-        this.title = title;
+        this.movieTitle = movieTitle;
         this.description = description;
-        this.category = category;
+        this.releaseDate = releaseDate;
     }
 
-    public ShowTime[] getShowTimes() {
-        ShowTime[] published = new ShowTime[showTimeCount];
-        int count = 0;
-        for (int i = 0; i < showTimeCount; i++) {
-            if (showTimeArray[i].getIsPublished()) published[count++] = showTimeArray[i];
-        }
-        return published;
+    //getters
+    public int getMovieId() {
+        return movieId;
     }
 
-    public void addShowTime(ShowTime s) {
-        for (int i = 0; i < showTimeCount; i++) {
-            if (showTimeArray[i].getShowTimeId() == s.getShowTimeId()) {
-                showTimeArray[i] = s;
-                return;
-            }
-        }
-        if (showTimeCount >= MAX_SHOWTIMES) throw new IllegalStateException("ShowTime array full.");
-        showTimeArray[showTimeCount++] = s;
+    public String getMovieTitle() {
+        return movieTitle;
     }
 
-    public Review[] getReviews() {
-        return reviewArray;
-    }
-
-    public void addReview(Review r) {
-        for (int i = 0; i < reviewCount; i++) {
-            if (reviewArray[i].getReviewId() == r.getReviewId()) {
-                reviewArray[i] = r;
-                return;
-            }
-        }
-        if (reviewCount >= MAX_REVIEWS) throw new IllegalStateException("Review array full.");
-        reviewArray[reviewCount++] = r;
-    }
-
-    public double calcGrossRevenue() {
-        double total = 0;
-        for (int i = 0; i < showTimeCount; i++) {
-            total += showTimeArray[i].calcShowtimeRevenue();
-        }
-        return total;
-    }
-
-    public void deleteReview(int reviewId) {
-        for (int i = 0; i < reviewCount; i++) {
-            if (reviewArray[i].getReviewId() == reviewId) {
-                reviewArray[i] = null;
-                return;
-            }
-        }
-        throw new IllegalArgumentException("Review not found.");
-    }
-
-    public String getTitle() {
-        return title;
+    public String getReleaseDate() {
+        return releaseDate;
     }
 
     public String getDescription() {
@@ -88,22 +70,83 @@ class Movie {
         return category;
     }
 
-    public void setTitle(String title) {
-        if (title == null || title.trim().isEmpty()) throw new IllegalArgumentException("Title cannot be empty.");
-        this.title = title;
+    public List<Review> getReviewList() {
+        return reviewList;
+    }
+
+    public List<ShowTime> getShowTimeList() {
+        return showTimeList;
+    }
+
+    //setters
+    public void setMovieTitle(String movieTitle) {
+        //movieTitle ekata null value ekak hari nettm space witrak tiyana ekak dunnoth error ekak danwa
+        if (movieTitle == null || movieTitle.trim().isEmpty()) {
+            throw new IllegalArgumentException("Movie title cannot be null or empty.");
+        }
+        this.movieTitle = movieTitle;
+    }
+
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
+    }
+
+    public void setReleaseDate(String releaseDate) {
+        //releaseDate ekata null value ekak hari nettm space witrak tiyana ekak dunnoth error ekak danwa
+        if (releaseDate == null || releaseDate.trim().isEmpty()) {
+            throw new IllegalArgumentException("Release date cannot be null or empty.");
+        }
+        this.releaseDate = releaseDate;
     }
 
     public void setDescription(String description) {
-        if (description == null || description.trim().isEmpty())
-            throw new IllegalArgumentException("Description cannot be empty.");
+        //description ekata null value ekak hari nettm space witrak tiyana ekak dunnoth error ekak danwa
+        if (description == null || description.trim().isEmpty()) {
+            throw new IllegalArgumentException("Description cannot be null or empty.");
+        }
         this.description = description;
     }
 
     public void setCategory(MovieCategory category) {
+        //category ekata null value ekak dunnoth error ekak danwa
+        if (category == null) {
+            throw new IllegalArgumentException("Movie category cannot be null.");
+        }
         this.category = category;
     }
-}
 
-enum MovieCategory {
-    HORROR, ROMANCE, ACTION, DRAMA, COMEDY, FAMILY
+    public void setReviewList(List<Review> reviewList) {
+        this.reviewList = (reviewList != null) ? reviewList : new ArrayList<>();
+    }
+
+    public void setShowTimeList(List<ShowTime> showTimeList) {
+        this.showTimeList = (showTimeList != null) ? showTimeList : new ArrayList<>();
+    }
+
+    //custom methods
+    //showtime object ekak add kranwa showtime list ekata
+    public void addShowTime(ShowTime s) {
+        showTimeList.removeIf(existing -> existing.getShowTimeId() == s.getShowTimeId());
+        showTimeList.add(s);
+    }
+
+    //showtime list eke showtime object eka hoyala tiyanwanm eka delete karanwa
+    public void deleteShowTime(int showTimeId) {
+        showTimeList.removeIf(s -> s.getShowTimeId() == showTimeId);
+    }
+
+    //review list ekata review object ekak add karanwa
+    public void addReview(Review r) {
+        //review list eke e object eka tiynwanm issrlama ain krnwa
+        reviewList.removeIf(existing -> existing.getReviewId() == r.getReviewId());
+
+        //ita passe aluth eka add kranwa
+        reviewList.add(r);
+    }
+
+    //review list eken review object ekak ain kranwa
+    public void deleteReview(int reviewId) {
+        reviewList.removeIf(r -> r.getReviewId() == reviewId);
+    }
+
 }
