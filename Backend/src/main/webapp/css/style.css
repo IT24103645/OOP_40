@@ -1,0 +1,834 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+:root {
+  --cream-100: #dad2bc;
+  --cream-300: #aea896;
+  --red-100: #ff5c74;
+  --red-200: #cc4a5d;
+  --red-300: #753742;
+  --orange-300: #e9724c;
+  --green-100: #39e371;
+
+  --xxs: 0.1rem;
+  --xs: 0.3rem;
+  --small: 0.5rem;
+  --medium: 0.7rem;
+  --large: 1rem;
+  --xl: 1.5rem;
+  --xxl: 2rem;
+  --xxxl: 4rem;
+}
+
+/* reset styles */
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: var(--cream-100);
+  padding: 0.5em 1em;
+  color: rgb(0, 0, 0);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-weight: 700;
+  user-select: none;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: row;
+  column-gap: var(--medium);
+}
+
+.nav-btn {
+  border: var(--xxs) solid black;
+  border-radius: var(--small);
+
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  font-size: var(--medium);
+
+  margin: auto 0;
+  padding: var(--medium) var(--large);
+}
+
+.nav-btn-logout {
+  border: var(--xxs) solid var(--red-100);
+  border-radius: var(--small);
+
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: var(--red-100);
+  font-weight: 700;
+  font-size: var(--medium);
+
+  margin: auto 0;
+  padding: var(--medium) var(--large);
+}
+
+.nav-user {
+  display: flex;
+  column-gap: var(--small);
+}
+
+.nav-userDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-size: var(--medium);
+}
+
+.nav-userIcon {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.nav-userStatus {
+  color: var(--green-100);
+  font-weight: 700;
+}
+
+/* =========== */
+/* NAVBAR ^^^^ */
+/* =========== */
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: var(--cream-300);
+  border-radius: var(--small);
+
+  width: 30%;
+  margin: var(--xxl) auto;
+}
+
+.signup form {
+  width: 90%;
+  min-height: 22rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.signup-title {
+  padding: var(--xl) 0;
+  user-select: none;
+}
+
+.signup-inputs {
+  display: flex;
+  flex-direction: column;
+
+  font-size: var(--medium);
+}
+
+.signup-input {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--medium);
+
+  margin: 0 0 var(--xxl) 0;
+}
+
+.signup-input input {
+  border: none;
+  padding: var(--small);
+  border-radius: var(--xs);
+
+  transition: 0.2s;
+}
+
+.signup-input input:focus {
+  outline: 2px solid var(--orange-300);
+
+  padding: var(--small) var(--medium);
+}
+
+.signup-btns {
+  display: flex;
+  column-gap: var(--medium);
+
+  margin: auto 0 var(--xxl) 0;
+}
+
+.signup-btns button {
+  width: 100%;
+  padding: var(--medium) 0;
+
+  color: white;
+
+  border: none;
+  border-radius: var(--xs);
+
+  transition: 0.2s;
+}
+
+.signup-btns button:hover {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.signup-signup {
+  background-color: var(--orange-300);
+}
+
+.signup-cancel {
+  background-color: var(--red-300);
+}
+
+/* =========== */
+/* SIGNUP PAGE ^^^^ */
+/* =========== */
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: var(--xxl) auto;
+}
+
+.profile-title {
+  padding: var(--xl) 0;
+  user-select: none;
+}
+.profile-btns {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--large);
+}
+
+.profile-form-btn {
+  padding: var(--small) var(--xxxl);
+
+  border: none;
+  border-radius: var(--xs);
+
+  font-weight: 500;
+  text-decoration: none;
+
+  transition: 0.2s;
+}
+
+.profile-form-btn:hover {
+  outline: 2px solid var(--orange-300);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.profile-form-btn:active {
+  transform: scale(0.9);
+}
+
+.profile-cream-btn {
+  background-color: var(--cream-100);
+  color: black;
+}
+
+.profile-red-btn {
+  background-color: var(--red-300);
+  color: white;
+}
+
+.profile-red-btn:hover {
+  filter: brightness(1.1);
+}
+
+/* =========== */
+/* MY PROFILE PAGE ^^^^ */
+/* =========== */
+
+/*.myReview {*/
+/*  display: flex;*/
+/*  border-radius: var(--small);*/
+/*  overflow: hidden;*/
+/*  background-color: var(--cream-100);*/
+/*  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);*/
+/*  transition: transform 0.2s ease;*/
+/*}*/
+
+/*.myReview:hover {*/
+/*  transform: scale(1.01);*/
+/*}*/
+
+/*.myReview-img {*/
+/*  width: 25%;*/
+/*  min-height: 160px;*/
+/*  background-size: cover;*/
+/*  background-position: center;*/
+/*  background-repeat: no-repeat;*/
+/*}*/
+
+/*.myReview-details {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  justify-content: space-between;*/
+/*  width: 75%;*/
+/*  padding: var(--xl) var(--large);*/
+/*  gap: var(--medium);*/
+/*}*/
+
+/*.myReview-header {*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  align-items: center;*/
+/*}*/
+
+/*.myReview-movieTitle {*/
+/*  font-size: 1.2rem;*/
+/*  font-weight: bold;*/
+/*  margin: 0;*/
+/*}*/
+
+/*.myReview-stars {*/
+/*  font-size: 1rem;*/
+/*  color: var(--orange-300);*/
+/*  font-weight: bold;*/
+/*  white-space: nowrap;*/
+/*}*/
+
+/*.myReview-description {*/
+/*  color: #292929;*/
+/*  line-height: 1.5;*/
+/*  margin: 0;*/
+/*  font-size: 0.95rem;*/
+/*}*/
+
+/*.myReviews-btns {*/
+/*  display: flex;*/
+/*  justify-content: flex-start;*/
+/*  gap: var(--small);*/
+/*}*/
+
+/*.myReviews-btns form {*/
+/*  display: inline;*/
+/*}*/
+
+/*.myReviews-btns button {*/
+/*  padding: 0.5em 1em;*/
+/*  font-size: 0.9rem;*/
+/*  font-weight: 500;*/
+/*  color: white;*/
+/*  border: none;*/
+/*  border-radius: var(--xs);*/
+/*  transition: 0.2s ease;*/
+/*}*/
+
+/*.myReviews-btns button:hover {*/
+/*  filter: brightness(1.1);*/
+/*  transform: scale(1.05);*/
+/*  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*.myReviews-edit-btn {*/
+/*  background-color: var(--orange-300);*/
+/*}*/
+
+/*.myReviews-delete-btn {*/
+/*  background-color: var(--red-300);*/
+/*}*/
+
+/*================chatGPT below====*/
+.myReviews {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.myReviews-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.myReviews-reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.review-card {
+  display: flex;
+  background-color: var(--cream-100);
+  border-radius: var(--small);
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.review-card:hover {
+  transform: scale(1.01);
+}
+
+.review-left {
+  width: 180px;
+  flex-shrink: 0;
+}
+
+.review-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  min-height: 160px;
+}
+
+.review-right {
+  flex-grow: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.review-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.review-stars {
+  font-size: 1.2rem;
+  color: #f5a623;
+}
+
+.review-body {
+  margin: 16px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.review-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--xs);
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.edit-btn {
+  background-color: var(--orange-300);
+  padding: var(--medium) var(--large);
+}
+
+.delete-btn {
+  background-color: var(--red-300);
+  padding: var(--medium) var(--large);
+}
+
+
+/* =========== */
+/* MY REVIEWS PAGE ^^^^ */
+/* =========== */
+
+.movieDetails {
+  width: 60%;
+  margin: var(--xxl) auto;
+  border-radius: var(--small);
+  padding: var(--large);
+
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--large);
+
+  background-color: var(--cream-300);
+}
+
+.movieDetails > h3 {
+  padding: var(--large) 0;
+}
+
+.movieDetails > p {
+  padding: var(--medium) 0;
+}
+
+.movieDetails-details {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--medium);
+}
+
+.movieDetails-btns {
+  display: flex;
+  column-gap: var(--large);
+
+  padding: var(--medium) 0;
+}
+
+.movieDetails-btns > a {
+  padding: var(--medium) var(--small);
+
+  border: none;
+  border-radius: var(--xs);
+
+  font-weight: 500;
+  text-decoration: none;
+
+  transition: 0.2s;
+}
+
+.movieDetails-btns button:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.movieDetails-btns button:active {
+  transform: scale(0.9);
+}
+
+.movieDetails-btn-red {
+  background-color: var(--red-300);
+  color: white;
+}
+
+.movieDetails-btn-orange {
+  background-color: var(--orange-300);
+  color: white;
+}
+
+.movieDetails-reviews {
+  display: flex;
+  flex-direction: row;
+  column-gap: var(--medium);
+
+  overflow-x: scroll;
+
+  user-select: none;
+}
+
+.movieDetails-reviews::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.movieDetails-review {
+  background-color: var(--cream-100);
+  border-radius: var(--small);
+  border: 2px solid var(--orange-300);
+
+  padding: var(--medium) var(--large);
+
+  min-width: calc(3 * var(--xxxl));
+
+  color: black;
+}
+
+/* =========== */
+/* MOVIE DETAILS PAGE ^^^^ */
+/* =========== */
+
+.confirmDelete {
+  width: 30%;
+  padding: var(--large);
+  margin: var(--xxl) auto;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--red-200);
+  border-radius: var(--small);
+}
+
+.confirmDelete-question {
+  padding: var(--medium) 0 var(--xxxl) 0;
+  color: white;
+
+  font-size: var(--large);
+}
+
+.confirmDelete-btns {
+  display: flex;
+  column-gap: var(--medium);
+}
+
+.confirmDelete-btns button {
+  width: 100%;
+  padding: var(--small) 0;
+
+  border: none;
+  border-radius: var(--xs);
+
+  transition: 0.2s;
+}
+
+.confirmDelete-btns button:hover {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.confirmDelete-confirm {
+  color: black;
+  background-color: var(--cream-100);
+}
+
+.confirmDelete-cancel {
+  color: white;
+  background-color: var(--red-300);
+}
+
+/* =========== */
+/* CONFIRM DELETE ^^^^ */
+/* =========== */
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--xxl) var(--xxxl);
+
+  user-select: none;
+
+  margin: var(--xxxl) var(--xxxl);
+}
+
+.movieTile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: var(--cream-100);
+
+  padding: var(--large) var(--medium);
+  border-radius: var(--small);
+  /* width: calc(4 * var(--xxxl)); */
+
+  transition: 0.2s;
+}
+
+.movieTile p {
+  font-size: var(--medium);
+}
+
+.movieTile a{
+  text-decoration: none;
+  color: black;
+}
+
+.movieTile h4{
+  padding: var(--large) 0;
+  margin: 0;
+}
+
+.movietile-description{
+  padding: 0 0 var(--large) 0;
+}
+
+.movieTile:hover {
+  cursor: pointer;
+}
+
+.movieTile:active {
+  transform: scale(0.9);
+}
+
+/* =========== */
+/* INDEX PAGE ^^^^ */
+/* =========== */
+
+.movies-addNewButton {
+  width: calc(4 * var(--xxxl));
+  padding: var(--large) var(--medium);
+  background-color: var(--cream-300);
+  user-select: none;
+
+  border-radius: var(--small);
+
+  font-weight: 700;
+
+  display: flex;
+  justify-content: center;
+  margin: var(--large) auto;
+
+  transition: 0.2s;
+}
+
+.movies-addNewButton:hover {
+  cursor: pointer;
+}
+
+.movies-addNewButton:active {
+  transform: scale(0.9);
+}
+
+/* =========== */
+/* ADMIN LANDING PAGE ^^^^ */
+/* =========== */
+.myTickets {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 70%;
+
+  margin: var(--xxxl) auto;
+}
+
+.myTickets-tickets {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--large);
+}
+
+.myTickets > h2 {
+  margin: var(--large) 0;
+}
+
+.myTicket {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--large);
+
+  background-color: var(--cream-300);
+  border-radius: var(--small);
+}
+
+.myTickets-details {
+  display: flex;
+  flex-direction: row;
+  column-gap: var(--xxxl);
+}
+
+.myTicket-detail-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--medium);
+}
+
+.myTickets-btns {
+  display: flex;
+  column-gap: var(--large);
+}
+
+.myTickets-btns > button {
+  width: 100%;
+  padding: var(--small) 0;
+
+  border: none;
+  border-radius: var(--xs);
+
+  transition: 0.2s;
+}
+
+/* =========== */
+/* MY TICKETS PAGE ^^^^ */
+/* =========== */
+
+.seat-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.seat-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.seat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.seat input[type="radio"] {
+  display: none;
+}
+
+.seat span {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  transition: 0.2s;
+}
+
+.seat input[type="radio"]:checked + span {
+  background-color: var(--orange-300);
+  color: white;
+  border-color: var(--orange-300);
+}
+
+/* =========== */
+/* PICK SEAT - CHATGPT GENERATED STYLES ^^^^ */
+/* =========== */
+
+.select-Input{
+  border: none;
+  padding: var(--small);
+  border-radius: var(--xs);
+
+  transition: 0.2s;
+}
+
+.select-Input:focus {
+  outline: 2px solid var(--orange-300);
+
+  padding: var(--small) var(--medium);
+}
+
+/* =========== */
+/* For select inputs ^^^^ */
+/* =========== */
+
+.textarea-input{
+
+}
+
+/* =========== */
+/* For textarea inputs ^^^^ */
+/* =========== */
